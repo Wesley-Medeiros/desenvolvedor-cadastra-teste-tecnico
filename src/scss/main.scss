@@ -1,1 +1,19 @@
 @import "reset";
+
+#header {
+  border-bottom: 1px solid #C7C7C7;
+  ;
+}
+
+.containerWidth {
+  width: 1133px;
+  margin: 0 auto;
+}
+
+.wrapperHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 22px;
+  margin-bottom: 17px;
+}
