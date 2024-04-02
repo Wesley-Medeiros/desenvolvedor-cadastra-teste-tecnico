@@ -46,6 +46,15 @@
     }
   }
 
+.mainWrapper {
+  display: flex;
+  gap: 44px;
+}
+
+.aside {
+  width: 157px;
+}
+
 .colorsContainer {
   margin-bottom: 24px;
 
@@ -57,7 +66,7 @@
     color: #333333;
   }
 
-  .checkboxContainer{
+  .checkboxContainer {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -71,6 +80,28 @@
       width: 16px;
       height: 16px;
     }
+  }
+
+  .priceContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    input {
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+    }
+
+    label {
+      font-size: 13px;
+      line-height: 13px;
+    }
+    
   }
 
   .dropDownColors {
@@ -143,6 +174,89 @@
     input[type="checkbox"]:checked + label {
       color: #000000;
       border: 1px solid #FB953E;
+    }
+  }
+
+}
+
+.productsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .cartWrapper {
+    width: 976px;
+    display: grid;
+    grid-template-columns: 192px 192px 192px;
+    gap: 64px;
+    margin-left: 131px;
+
+    .cartContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      img {
+        width: 195px;
+        height: 293px;
+        left: 131px;
+        margin-bottom: 10px;
+      }
+  
+      h3 {
+        font-size: 14px;
+        line-height: 19px;
+        color: #000000;
+        margin-bottom: 10px;
+      }
+  
+      strong {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 21px;
+        margin-bottom: 1px;
+      }
+  
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        margin-bottom: 14px;
+        color: #666666;
+      }
+  
+      button {
+        width: 195px;
+        height: 33px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: #000000;
+        color: white;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 21px;
+      }
+   }
+    .lastButton {
+      width: 620px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      button {
+        width: 175px;
+        height: 35px;
+        background: #FB953E;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        color: white;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 21px;
+        border: none;
+      }
     }
   }
 }
