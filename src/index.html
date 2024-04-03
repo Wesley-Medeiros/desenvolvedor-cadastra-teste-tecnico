@@ -24,8 +24,12 @@
     <div class="containerTittleDropdown">
       <h1>Blusas</h1>
       <div class="dropDown">
-        <a href="">Ordenar por:</a>
-        <img src="img/assets/vector.svg" alt="Vector">
+        <button>Ordenar por: <img src="img/assets/vector.svg" alt="Vector"></button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">Mais recentes</a>
+          <a href="#">Menor Preço</a>
+          <a href="#">Maior preço</a>
+        </div>
       </div>
     </div>
 
@@ -34,28 +38,65 @@
       <div class="colorsContainer">
         <h2>Cores</h2>
         <div>
-          <div class="checkboxContainer">
-            <input type="checkbox" name="CheckBox" id="CheckBox">
-            <label for="CheckBox">Amarelo</label>
-          </div>
-            <div class="checkboxContainer">
-              <input type="checkbox" name="CheckBox" id="CheckBox">
-              <label for="CheckBox">Azul</label>
-            </div>
-            <div class="checkboxContainer">
-              <input type="checkbox" name="CheckBox" id="CheckBox">
-            <label for="CheckBox">Branco</label>
-            </div>
-            <div class="checkboxContainer">
-              <input type="checkbox" name="CheckBox" id="CheckBox">
-            <label for="CheckBox">Cinza</label>
-            </div><div class="checkboxContainer">
-              <input type="checkbox" name="CheckBox" id="CheckBox">
-            <label for="CheckBox">Laranja</label>
-            </div>
-            <div class="dropDownColors">
-              <span>ver todas as cores</span>
+          <label class="checkbox-container">
+            <input type="checkbox"/>
+            <span class="checkbox-square"></span>
+            <span>Amarelo</span>
+        </label>
+          <label class="checkbox-container">
+            <input type="checkbox"/>
+            <span class="checkbox-square"></span>
+            <span>Azul</span>
+        </label>
+          <label class="checkbox-container">
+            <input type="checkbox"/>
+            <span class="checkbox-square"></span>
+            <span>Branco</span>
+        </label>
+          <label class="checkbox-container">
+            <input type="checkbox"/>
+            <span class="checkbox-square"></span>
+            <span>Cinza</span>
+        </label>
+        <label class="checkbox-container">
+          <input type="checkbox"/>
+          <span class="checkbox-square"></span>
+          <span>Laranja</span>
+      </label>
+            <div id="dropDownHide" class="dropDownColors">
+              <div class="spanDropHide">
+                <span class="spanDrop">ver todas as cores</span>
               <img src="./img/assets/vector.svg" alt="Vector">
+              </div>
+              <div id="myDropdownColors" class="dropdown-content-Colors">
+                <div class="hideCheckbox">
+                  <label class="checkbox-container">
+                    <input type="checkbox"/>
+                    <span class="checkbox-square"></span>
+                    <span>Verde</span>
+                </label>
+                  <label class="checkbox-container">
+                    <input type="checkbox"/>
+                    <span class="checkbox-square"></span>
+                    <span>Vermelho</span>
+                </label>
+                  <label class="checkbox-container">
+                    <input type="checkbox"/>
+                    <span class="checkbox-square"></span>
+                    <span>Preto</span>
+                    <label class="checkbox-container">
+                      <input type="checkbox"/>
+                      <span class="checkbox-square"></span>
+                      <span>Rosa</span>
+                  </label>
+                  <label class="checkbox-container">
+                    <input type="checkbox"/>
+                    <span class="checkbox-square"></span>
+                    <span>Vinho</span>
+                </label>
+                </label>
+                </div>
+              </div>
             </div>
         </div>
       </div>
@@ -113,25 +154,31 @@
       <div class="colorsContainer">
         <h2>Faixa de preço</h2>
         <div>
-          <div class="priceContainer">
-            <input type="checkbox" name="CheckBox" id="CheckBox">
-            <label for="CheckBox">de R$0 até R$50</label>
-          </div>
-            <div class="priceContainer">
-              <input type="checkbox" name="CheckBox" id="CheckBox">
-              <label for="CheckBox">de R$51 até R$150</label>
-            </div>
-            <div class="priceContainer">
-              <input type="checkbox" name="CheckBox" id="CheckBox">
-            <label for="CheckBox">de R$151 até R$300</label>
-            </div>
-            <div class="priceContainer">
-              <input type="checkbox" name="CheckBox" id="CheckBox">
-            <label for="CheckBox">de R$301 até R$500</label>
-            </div><div class="priceContainer">
-              <input type="checkbox" name="CheckBox" id="CheckBox">
-            <label for="CheckBox">a partir de R$ 500</label>
-            </div>
+            <label class="checkbox-container">
+              <input type="checkbox"/>
+              <span class="checkbox-square"></span>
+              <span>de R$0 até R$50</span>
+          </label>
+            <label class="checkbox-container">
+              <input type="checkbox"/>
+              <span class="checkbox-square"></span>
+              <span>de R$51 até R$150</span>
+          </label>
+            <label class="checkbox-container">
+              <input type="checkbox"/>
+              <span class="checkbox-square"></span>
+              <span>de R$151 até R$300</span>
+          </label>
+            <label class="checkbox-container">
+              <input type="checkbox"/>
+              <span class="checkbox-square"></span>
+              <span>de R$301 até R$500</span>
+          </label>
+          <label class="checkbox-container">
+            <input type="checkbox"/>
+            <span class="checkbox-square"></span>
+            <span>a partir de R$ 500</span>
+        </label>
     </aside>
 
     <div class="productsContainer">
@@ -205,10 +252,9 @@
       </div>
     </div>
    </div>
-
   </main>
 
-  <footer>CADASTRA: Implantação de E-commerce VTEX</footer>
+  <footer class="footer">CADASTRA: IMPLANTAÇÃO DE E-COMMERCE VTEX</footer>
 
 </body>
 
