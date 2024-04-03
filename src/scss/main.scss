@@ -2,7 +2,6 @@
 
 #header {
   border-bottom: 1px solid #C7C7C7;
-  ;
 }
 
 .containerWidth {
@@ -10,6 +9,7 @@
   margin: 0 auto;
   font-family: "Open Sans", sans-serif;
 }
+
 
 .wrapperHeader {
   display: flex;
@@ -33,8 +33,12 @@
     font-family: "Open Sans", sans-serif;
   }
 
+  .hideButtons {
+    display: none;
+  }
+
   .dropDown {
-      button {
+    .mainButtonDropdown {
         font-family: "Open Sans", sans-serif;
         width: 142px;
         height: 42px;
@@ -250,13 +254,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
   .cartWrapper {
     width: 976px;
     display: grid;
     grid-template-columns: 192px 192px 192px;
     gap: 64px;
-    margin-left: 131px;
+    justify-content: center;
 
     .cartContainer {
       display: flex;
@@ -304,29 +309,31 @@
         font-weight: 700;
         font-size: 16px;
         line-height: 21px;
+        cursor: pointer;
       }
    }
-    .lastButton {
-      width: 620px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 35px;
-      
-      button {
-        width: 175px;
-        height: 35px;
-        background: #FB953E;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        color: white;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 21px;
-        border: none;
-      }
-    }
+  }
+}
+.lastButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 35px;
+  margin-top: 70px;
+  
+  button {
+    width: 175px;
+    height: 35px;
+    background: #FB953E;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    border: none;
+    cursor: pointer;
   }
 }
 
@@ -390,6 +397,102 @@
   .dropdown-content {
     display: block;
   }
+}
+
+@media screen and (max-width: 1200px) {
+
+  #header {
+    padding: 10px;
+  }
+
+  .containerWidth {
+    width: 343px;
+    margin: 0 auto;
+    font-family: "Open Sans", sans-serif;
+
+  }
+
+  .containerTittleDropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    h1 {
+      margin-bottom: 12px;
+    }
+
+    .mainButtonDropdown {
+      display: none;
+    }
+
+    .hideButtons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Open Sans", sans-serif;
+      width: 343px;
+      height: 41px;
+     
+
+      button {
+        width: 100%;
+        background: #FFFFFF;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        color: #666666;
+        font-size: 24px;
+        line-height: 32.68px;
+        cursor: pointer;
+      }
+    }
+
+      img {
+        display: none;
+      }
+  }
+
+  .aside {
+    display: none;
+  }
+  
+  .productsContainer {
+    width: 100%;
+    display: flex;
+
+    .cartWrapper {
+      display: grid;
+      grid-template-columns: 162px 162px;
+      margin-left: 0;
+      width: 0;
+      gap: 19px;
+
+      .cartContainer {
+        img {
+          width: 159px;
+          height: 241px;
+          left: 131px;
+          margin-bottom: 10px;
+        }
+  
+      button {
+        width: 162px;
+        height: 33px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: #000000;
+        border: none;
+        color: white;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 21px;
+        cursor: pointer;
+      }
+      }
+    }
+  }
+
 }
 
 
