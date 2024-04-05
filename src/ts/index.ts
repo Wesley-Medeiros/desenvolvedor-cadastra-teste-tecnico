@@ -73,8 +73,8 @@ function main() {
     })
 
     
-    const checkboxes = document.querySelectorAll<HTMLInputElement>('.checkbox-container input');
-    const checkboxesSizes = document.querySelectorAll<HTMLInputElement>('.sizesContainer input');
+    const checkboxes = document.querySelectorAll<HTMLInputElement>('.checkbox-container-mobile input');
+    const checkboxesSizes = document.querySelectorAll<HTMLInputElement>('.checkboxSizesContainerMobile input');
     const applyButton = document.getElementById('filterModalbuttons');
 
     checkboxes.forEach(function (checkbox) {
@@ -127,6 +127,8 @@ function main() {
         .catch(erro => console.error('Falha ao buscar produtos:', erro));
     }
     buscarProdutos()
+
+    
   }
   
 
