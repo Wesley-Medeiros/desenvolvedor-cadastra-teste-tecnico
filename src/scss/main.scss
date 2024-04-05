@@ -35,6 +35,36 @@
 
   .hideButtons {
     display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: "Open Sans", sans-serif;
+    width: 343px;
+    height: 41px;
+     
+
+    .filterButton {
+      width: 171px;
+      background: #FFFFFF;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      color: #666666;
+      font-size: 24px;
+      line-height: 32.68px;
+      cursor: pointer;
+    }
+
+    .orderButton {
+      width: 171px;
+      background: #FFFFFF;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      color: #666666;
+      font-size: 24px;
+      line-height: 32.68px;
+      cursor: pointer;
+    }
   }
 
   .dropDown {
@@ -55,6 +85,19 @@
         img {
           color: #000000;
         }
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 140px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content.show {
+        display: block;
       }
     }
   }
@@ -84,7 +127,6 @@
       position: relative;
       gap: 10px;
       margin-bottom: 10px;
-      
     }
     
     .checkbox-square {
@@ -240,6 +282,7 @@
       border: 1px solid rgba(0, 0, 0, 0.5);
       color: rgba(0, 0, 0, 0.5);
       margin-bottom: 8px;
+      cursor: pointer;
     }
     
     input[type="checkbox"]:checked + label {
@@ -427,22 +470,264 @@
 
     .hideButtons {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Open Sans", sans-serif;
-      width: 343px;
-      height: 41px;
-     
 
-      button {
+      .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
+        padding-top: 100px; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgb(0,0,0); 
+        background-color: rgba(0,0,0,0.4); 
+      }
+      
+      .modal-content {
+        display: none;
+        background-color: #fefefe;
+        margin: 0 auto;
+        font-family: "Open Sans", sans-serif;
+        border: 1px solid #888;
         width: 100%;
-        background: #FFFFFF;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        color: #666666;
-        font-size: 24px;
-        line-height: 32.68px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+
+        .ModalHeader {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid #C7C7C7;
+
+          div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 343px;
+            p {
+              font-size: 28px;
+              line-height: 38px;
+              color: #666666;
+              
+            }
+          }
+          
+        }
+
+        .orderModalHeader {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid #C7C7C7;
+          
+          div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 343px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+
+            p {
+              font-size: 28px;
+              line-height: 38px;
+              color: #666666;
+            }
+          }
+        }
+          .mainModal {
+            display: flex;
+            flex-direction: column;
+            width: 343px;
+            margin: 0 auto;
+            
+            div {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              width: 343px;
+              margin-top: 16px;
+              margin-bottom: 16px;
+  
+              a {
+                text-decoration: none;
+                margin-top: 30px;
+                color: #000000;
+              }             
+            }
+          }
+      }
+      
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      
+      .filterModal {
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
+        padding-top: 100px; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgb(0,0,0); 
+        background-color: rgba(0,0,0,0.4); 
+      }
+      
+      .filter-modal-content {
+        display: none;
+        background-color: #fefefe;
+        margin: 0 auto;
+        font-family: "Open Sans", sans-serif;
+        border: 1px solid #888;
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        overflow: scroll;
+        
+        overflow-x: hidden;
+
+        .filterContainer {
+          width: 343px;
+          margin: 0 auto;
+        }
+
+        .filterModalHeader {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid #C7C7C7;
+          
+          div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 343px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+
+            p {
+              font-size: 28px;
+              line-height: 38px;
+              color: #666666;
+            }
+          }
+        }
+
+        .mainFilterModal {
+          display: flex;
+          flex-direction: column;
+          width: 343px;
+          margin: 0 auto;
+
+          .accordion {
+            display: none;
+            margin-top: 20px;
+          }
+
+          .filterModalButtons {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 23px;
+            margin-top: 30px;
+            margin-bottom: 17px;
+          
+            .applyButton {
+              width: 160px;
+              height: 35px;
+              background: #FB953E;
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              appearance: none;
+              color: white;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 19.07px;
+              border: none;
+              cursor: pointer;
+              }
+
+              .clearButton {
+                width: 160px;
+                height: 35px;
+                background: white;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                color: #666666;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 19.07px;
+                border: none;
+                cursor: pointer;
+                border: 1px solid #666666;
+              }
+            }
+          
+          div {
+            width: 343px;
+            
+
+            .filterButtonDropdown {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              background-color: #fefefe;
+              align-items: center;
+              justify-content: space-between;
+              border: none;
+              color: #666666;
+              font-size: 24px;
+              line-height: 32px;
+              letter-spacing: 5%;
+              padding: 0;
+              margin-top: 30px;
+              cursor: pointer;
+
+
+              img {
+                display: block;
+              }
+              
+          }
+
+          
+        }
+
+        }
+      }
+      
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
         cursor: pointer;
       }
     }
@@ -488,12 +773,11 @@
         font-size: 16px;
         line-height: 21px;
         cursor: pointer;
-      }
+        }
       }
     }
   }
 
 }
-
 
 
