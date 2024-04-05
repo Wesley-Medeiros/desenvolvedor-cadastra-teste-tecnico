@@ -90,6 +90,45 @@ function main() {
             applyButton.style.display = anyChecked ? 'flex' : 'none';
         });
     });
+
+    interface Produto {
+      id: string,
+      name: string,
+      price: number,
+      parcelamento: number[],
+      color: string,
+      image: string,
+      sizes: string[],
+      date: string
+    }
+
+    function buscarProdutos() {
+      fetch('http://localhost:5000/products')
+        .then(response => response.json())
+        .then((produtos) => {
+          console.log('asda', produtos)
+          const divProdutos = document.querySelector('.cartWrapper');
+          produtos.forEach((produto: Produto) => {
+            // Cria os elementos HTML para cada produto
+            const produtoElemento: HTMLDivElement = document.createElement('div');
+            produtoElemento.classList.add('cartContainer');
+
+            produtoElemento.innerHTML = `
+            <img class="prdouctImg" src="${produto.image}" alt="${produto.name}">
+            <h3>${produto.name}</h2>
+            <strong>R$ ${produto.price}</strong>
+            <p>até ${produto.parcelamento}</p>
+            <button>Comprar</button>
+            `  
+          ;
+            console.log(produto)
+            // Adiciona o produto na div de produtos
+            divProdutos.appendChild(produtoElemento);
+          });
+        })
+        .catch(erro => console.error('Falha ao buscar produtos:', erro));
+    }
+    buscarProdutos()
   }
   
 
