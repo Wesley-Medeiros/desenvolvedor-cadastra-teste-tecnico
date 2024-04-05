@@ -106,23 +106,21 @@ function main() {
       fetch('http://localhost:5000/products')
         .then(response => response.json())
         .then((produtos) => {
-          console.log('asda', produtos)
           const divProdutos = document.querySelector('.cartWrapper');
           produtos.forEach((produto: Produto) => {
-            // Cria os elementos HTML para cada produto
             const produtoElemento: HTMLDivElement = document.createElement('div');
             produtoElemento.classList.add('cartContainer');
+            const numeroFormatado = produto.parcelamento[1].toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            const preçoTotalFormatado = produto.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
             produtoElemento.innerHTML = `
             <img class="prdouctImg" src="${produto.image}" alt="${produto.name}">
-            <h3>${produto.name}</h2>
-            <strong>R$ ${produto.price}</strong>
-            <p>até ${produto.parcelamento}</p>
+            <h3>${produto.name}</h3>
+            <strong>R$ ${preçoTotalFormatado}</strong>
+            <p>até ${produto.parcelamento[0]}x de ${numeroFormatado}</p>
             <button>Comprar</button>
             `  
           ;
-            console.log(produto)
-            // Adiciona o produto na div de produtos
             divProdutos.appendChild(produtoElemento);
           });
         })
