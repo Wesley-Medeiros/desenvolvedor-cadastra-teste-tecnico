@@ -52,6 +52,7 @@
       font-size: 24px;
       line-height: 32.68px;
       cursor: pointer;
+      border-right: none;
     }
 
     .orderButton {
@@ -98,6 +99,7 @@
 
       .dropdown-content.show {
         display: flex;
+
       }
     }
   }
@@ -109,7 +111,69 @@
 
 .aside {
   width: 157px;
-}
+
+  .priceContainer {
+    
+    h2 {
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      line-height: 21.79px;
+      color: #333333;
+      margin-bottom: 14px;
+    }
+  
+    
+      .radio-price {
+        display: flex;
+        position: relative;
+        gap: 10px;
+        margin-bottom: 10px;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        .radio {
+          display: none;
+        } 
+
+        span {
+          position: relative;
+          line-height: 22px;
+        }
+
+        span:before,
+        span:after {
+          content: '';
+        }
+
+        span:before {
+          border: 1px solid rgba(0, 0, 0, 0.5);
+          width: 16px;
+          height: 16px;
+          margin-right: 10px;
+          display: inline-block;
+          vertical-align: top;
+          cursor: pointer;
+        }
+
+        span:after {
+          background: #FB953E;
+          width: 12px;
+          height: 12px;
+          position: absolute;
+          top: 3px;
+          left: 3px;
+          transition: 300ms;
+          opacity: 0;
+          cursor: pointer;
+        }
+
+        input:checked+span:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
 
 .colorsContainer {
   margin-bottom: 24px;
@@ -211,6 +275,7 @@
     cursor: pointer;
     display: flex;
     flex-wrap: wrap;
+
     .spanDropHide.show {
       display: block;
     }
@@ -360,7 +425,7 @@
    }
   }
 }
-.lastButton {
+.showMore {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -381,6 +446,11 @@
     border: none;
     cursor: pointer;
   }
+
+  button.hidden {
+    display: none;  
+  }
+
 }
 
 .footer {
@@ -432,6 +502,7 @@
     padding: 12px;
     font-size: 16px;
     line-height: 21.79px;
+    cursor: pointer;
   }
 }
 
@@ -478,7 +549,7 @@
       margin-bottom: 12px;
     }
 
-    .mainButtonDropdown {
+    .dropDown {
       display: none;
     }
 
@@ -529,6 +600,7 @@
               
             }
           }
+
           
         }
 
@@ -675,6 +747,57 @@
                 margin-bottom: 10px;
             }
 
+            .radio-price-mobile {
+              display: flex;
+              position: relative;
+              gap: 10px;
+              margin-bottom: 10px;
+              align-items: flex-start;
+              justify-content: flex-start;
+      
+              .radio-mobile {
+                display: none;
+              } 
+      
+              span {
+                position: relative;
+                line-height: 22px;
+              }
+      
+              span:before,
+              span:after {
+                content: '';
+              }
+      
+              span:before {
+                border: 1px solid rgba(0, 0, 0, 0.5);
+                width: 16px;
+                height: 16px;
+                margin-right: 10px;
+                display: inline-block;
+                vertical-align: top;
+                cursor: pointer;
+              }
+      
+              span:after {
+                background: #FB953E;
+                width: 12px;
+                height: 12px;
+                position: absolute;
+                top: 3px;
+                left: 3px;
+                transition: 300ms;
+                opacity: 0;
+                cursor: pointer;
+              }
+      
+              input:checked+span:after {
+                opacity: 1;
+              }
+            }
+
+            
+
             .checkbox-square {
               width: 16px;
               height: 16px;
@@ -782,6 +905,7 @@
               border: none;
               cursor: pointer;
               }
+              
 
               .clearButton {
                 width: 160px;
@@ -798,6 +922,14 @@
                 cursor: pointer;
                 border: 1px solid #666666;
               }
+            }
+
+            .chevron {
+              transition: transform .2s linear;
+            }
+
+            .filterButtonDropdown:has(.active) .chevron {
+              transform: rotate(180deg);
             }
           
           div {
@@ -820,12 +952,13 @@
               margin-top: 30px;
               cursor: pointer;
 
-
               img {
                 display: block;
               }
               
           }
+
+
 
           
         }
