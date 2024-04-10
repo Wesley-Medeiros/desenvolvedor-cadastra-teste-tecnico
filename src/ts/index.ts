@@ -1,9 +1,6 @@
 function main() {
 
-  let filter: Filter = {
-    price_lte: 0,
-    price_gte: 0
-  }
+  let filter: Filter = {}
 
   var acc = document.getElementsByClassName("filterButtonDropdown")
   var i
@@ -173,43 +170,39 @@ function main() {
       })
       filter.color = selectedColorsMobile
 
-      fetchProducts(filter).then(res => {
-        const cartContainers = document.querySelectorAll('.cartContainer')
-        cartContainers.forEach(container => {
-          container.remove()
-        })
-  
-        newObject(res.data)
-      })
   
     }
     
-    document.querySelector('#filterModalbuttons .applyButton').addEventListener('click', () => updateSelectedColorsMobile())
+    //document.querySelector('#filterModalbuttons .applyButton').addEventListener('click', () => updateSelectedColorsMobile())
 
 
     function updateSelectedSizesMobile() {
       const selectedSizesMobile: string[] = []
       const checkboxes = document.querySelectorAll('#sizes-mobile .checkbox-size')
+      console.log('checkboxes', checkboxes)
       const newArray = Array.from(checkboxes)
+      console.log('sid', newArray)
 
       newArray.forEach((checkbox: HTMLInputElement) => {
         if (checkbox.checked) {
+          console.log('checkbox', checkbox)
           selectedSizesMobile.push(checkbox.defaultValue)
         }
     })
+    console.log('selected', selectedSizesMobile)
     filter.size_like = selectedSizesMobile
 
-      fetchProducts(filter).then(res => {
-        const cartContainers = document.querySelectorAll('.cartContainer')
-        cartContainers.forEach(container => {
-          container.remove()
-        })
+      //fetchProducts(filter).then(res => {
+        //const cartContainers = document.querySelectorAll('.cartContainer')
+        //cartContainers.forEach(container => {
+         // container.remove()
+       // })
   
-        newObject(res.data)
-      }) 
+       // newObject(res.data)
+      //}) 
     }
 
-    document.querySelector('#filterModalbuttons .applyButton').addEventListener('click', () => updateSelectedSizesMobile())
+    //document.querySelector('#filterModalbuttons .applyButton').addEventListener('click', () => updateSelectedSizesMobile())
 
     function updateSelectedSizes() {
       const selectedSizes: string[] = [] 
@@ -239,15 +232,51 @@ function main() {
     }
     updateSelectedSizes()
 
+    function updateRangePriceMobile() {
+      const radios = document.querySelectorAll('#range-price-mobile .radio-mobile')
+      console.log('radiosMobile', radios)
+      const newArray = Array.from(radios)
+      console.log('newarrayMobile', newArray)
+
+      newArray.forEach((radio: HTMLInputElement) => {
+        if (radio.checked) {
+          const selectedValueMobile = Number(radio.defaultValue)
+          console.log('defaultValueMobile!', radio.defaultValue)
+          filter.price_lte = selectedValueMobile
+          console.log('selectedValueMobile', selectedValueMobile)
+          if (selectedValueMobile === 50) {
+            filter.price_gte = 0
+          } else if (selectedValueMobile === 150) {
+            filter.price_gte = 51
+          } else if(selectedValueMobile === 300) {
+            filter.price_gte = 151
+          } else if (selectedValueMobile === 500) {
+            filter.price_gte = 301
+          } else if (selectedValueMobile === 501) {
+            delete filter.price_lte
+            filter.price_gte = selectedValueMobile
+          } else {
+            delete filter.price_lte
+            delete filter.price_gte
+          }
+        }
+      })
+    }
+
+    //document.querySelector('#filterModalbuttons .applyButton').addEventListener('click', () => updateRangePriceMobile())
+
     function updateRangePrice() {
       const radios = document.querySelectorAll('#range-price .radio')
-      const newArray = Array.from(radios)
       console.log('radios', radios)
+      const newArray = Array.from(radios)
+      console.log('newArray', newArray)
   
       newArray.forEach((radio: HTMLInputElement) => {
         if (radio.checked) {
           const selectedValue = Number(radio.defaultValue)
+          console.log('defaultValue', radio.defaultValue)
           filter.price_lte = selectedValue
+          console.log('selectedValue', selectedValue)
           if (selectedValue === 50) {
             filter.price_gte = 0
           } else if (selectedValue === 150) {
@@ -283,6 +312,15 @@ function main() {
       radio.addEventListener('change', updateRangePrice)
     })
 
+    function handleApplyFilters() {
+      updateSelectedColorsMobile()
+      updateSelectedSizesMobile()
+      updateRangePriceMobile()
+      console.log('filter', filter)
+    }
+
+    document.querySelector('#filterModalbuttons .applyButton').addEventListener('click', () => handleApplyFilters())
+
 
     function uncheckAll() {
       document.querySelectorAll('input[type="checkbox"], input[type="radio"]')
@@ -300,9 +338,8 @@ function main() {
           })
   }
   
-    document.querySelectorAll('.clearButton').forEach(button => {
-        button.addEventListener('click', uncheckAll);
-  });
+    document.querySelector('.clearButton').addEventListener('click', () => uncheckAll());
+
     
   
      interface Filter {

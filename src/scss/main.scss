@@ -527,7 +527,36 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1150px) {
+
+  #header {
+    padding: 10px;
+  }
+
+  .containerWidth {
+    width: 804px;
+    margin: 0 auto;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .productsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  
+    .cartWrapper {
+      width: 540px;
+      display: grid;
+      grid-template-columns: 192px 192px;
+      gap: 64px;
+      justify-content: center;
+  }
+
+}
+}
+
+@media screen and (max-width: 640px) {
 
   #header {
     padding: 10px;
