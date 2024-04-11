@@ -1,4 +1,4 @@
-import { Filter} from './typings'
+import { Filter } from './typings'
   
   export  async function fetchProducts(filter?: Filter, customLimit?: number) {
     let limit = customLimit || 9
@@ -39,6 +39,13 @@ import { Filter} from './typings'
   
           next_page = current_page < total_pages ? current_page + 1 : null
           prev_page = current_page > 1 ? current_page - 1 : null
+
+          if(dataJson.length < total_of_items ) {   
+            document.getElementById('myBtn').classList.remove('hidden')      
+          }
+          else {
+            document.getElementById('myBtn').classList.add("hidden");   
+          }
   
           return {
               metadata: {
