@@ -88,18 +88,19 @@
         }
       }
       .dropdown-content {
-        display: none;
+        display: flex;
         position: absolute;
         background-color: #f1f1f1;
         min-width: 140px;
         overflow: auto;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
+        opacity: 0;
+        transition: .2s;
       }
 
       .dropdown-content.show {
-        display: flex;
-
+        opacity: 1;
       }
     }
   }
@@ -952,14 +953,6 @@
                 border: 1px solid #666666;
               }
             }
-
-            .chevron {
-              transition: transform .2s linear;
-            }
-
-            .filterButtonDropdown:has(.active) .chevron {
-              transform: rotate(180deg);
-            }
           
           div {
             width: 343px;
@@ -986,9 +979,6 @@
               }
               
           }
-
-
-
           
         }
 
@@ -1061,6 +1051,21 @@
         }
       }
     }
+  }
+
+  .footer {
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 33px;
+    background: #000000;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 5%;
+    font-family: "Open Sans", sans-serif;
   }
 
 }
