@@ -1,76 +1,51 @@
-# Venha ser um desenvolvedor da Cadastra
+# 📜Teste técnico desenvolvedor Cadastra
+Desenvolvimento de uma página de categoria para E-COMMERCE.
 
-Olá! Somos a Cadastra, uma Next-Gen Company que oferece soluções globais em marketing, tecnologia, estratégia de negócios, commerce, dados e analytics. Este desafio é voltado para o nosso Centro de Excelência (COE) de Commerce, especializado em implantação, migração, evolução e otimização de e-commerce.  Contamos com escritórios em 5 países, mas num formato de trabalho 100% home office.
+<table>
+  <tr>
+    <td valign="top"><img src="https://github.com/Wesley-Medeiros/desenvolvedor-cadastra-teste-tecnico/assets/112018277/d88d11a9-56b5-4cb2-b72a-2f8fa5ef05a6"/></td>
+    <td valign="top"><img src="https://github.com/Wesley-Medeiros/desenvolvedor-cadastra-teste-tecnico/assets/112018277/9a53d6c5-d31b-4913-a1e0-1d8fe493f7cb"/></td>
+  </tr>
+</table>
 
-Estamos em busca de Pessoas Desenvolvedoras `Front-end`, com sólidos conhecimentos em HTML, CSS e TS para projetar interfaces e entregar a melhor experiência para os consumidores visando sempre a otimização do código e agilidade no desenvolvimento.
-
-## O que procuramos
-
-### Requisitos Obrigatórios
-
-- Html5, css3;
-- Javascript/Typescript;
-- Consumo de APIs.
-- Versionamento Git;
-- Grunt/gulp;
-- Sass/less;
-- Nodejs
-- Sites responsivos;
-- Iniciativa, criatividade e colaboração;
-- Boas práticas: reutilização de código, semântica, organização, performance.
-
-### Desejáveis:
-
-- Experiência com algum CMS
-- Conhecimento/Experiência em Vtex
-- Nodejs
-
-----
-
-## Como se candidatar a vaga
-
-- [Crie um fork desse projeto;](https://github.com/Cadastra-Next-Gen-Company/desenvolvedor-cadastra/fork)
-- No seu fork, codifique o layout seguindo as instruções abaixo;
-- Atualize o readme com as instruções necessárias para rodar o seu código;
-- Adicione também seu e-mail de contato ao readme do projeto ( caso seu e-mail do github esteja privado )
-- envie para [vinicius.delfino@cadastra.com](mailto:vinicius.delfino@cadastra.com?subject=Vaga%20DEV%20-%20Cadastra)
+<table>
+  <tr>
+    <td valign="top"><img src="https://github.com/Wesley-Medeiros/desenvolvedor-cadastra-teste-tecnico/assets/112018277/0c29be53-b42d-4f34-88b1-c04403e49c9c"/></td>
+    <td valign="top"><img src="https://github.com/Wesley-Medeiros/desenvolvedor-cadastra-teste-tecnico/assets/112018277/dab3b819-ce38-4a18-9aec-090905d3668f"/></td>
+  </tr>
+</table>
 
 
-**obs.**: link do projeto [github.com/Cadastra-Next-Gen-Company/desenvolvedor-cadastra](https://github.com/Cadastra-Next-Gen-Company/desenvolvedor-cadastra)
+##  🚀 *Tecnologias*
+*Este projeto foi desenvolvido com as seguintes tecnologias:*
+ - HTML | SCSS | JAVASCRIPT
+ - GULP
+ - JSON WEB SERVER
 
-### Instruções para o teste
-
-O layout se encontra no [figma](https://www.figma.com/file/Z5RCG3Ewzwm7XIPuhMUsBZ/Desafio-Cadastra?type=design&node-id=0%3A1&mode=design&t=A0G2fRjMSrcQjchw-1).
-
-### Dependências
-
-O projeto possui um setup pronto no qual há a necessidade de possuir o nodejs instalado na versão 14 ou superior.
-
-Para instalar as dependências só é preciso executar o comando: `npm install`
-
-O dar start no server e nos processos para desenvolvimento é necessário rodar o comando: `npm start `
-
-Uma ver que o comando é dado ele irá levantar 2 servidores, sendo eles:
- - um para acessar o front-end que roda na porta 3000. No qual pode ser acessado pela url: http://localhost:3000
- - um para o json-server que irá export uma api com a lista de produtos que roda na porta 5000. Para acessar os produtos é na url:  http://localhost:5000/products
-
-### Objetivo
-
-O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front end, por isso pedimos que não utilize nenhum framework, porem caso deseje utilizar frameworks como react, é possível adicionar ao setup.
 ### Obrigatório
 
-- HTML5 e CSS3
-- Typescript
-- Requisição a API para obter os produtos
-- Funcionalidade: Filtrar produtos por cor, tamanho e preço.
-- Funcionalidade: Adicionar produto ao carrinho.
-- Funcionalidade: Carregar mais produtos.
-- Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ;
-- Responsividade
+- HTML5 e CSS3 ✅
+- Typescript ✅
+- Requisição a API para obter os produtos ✅
+- Funcionalidade: Filtrar produtos por cor, tamanho e preço. ✅
+- Funcionalidade: Adicionar produto ao carrinho. 🟥 (infelizmente não tive tempo para realizar)
+- Funcionalidade: Carregar mais produtos. ✅
+- Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ; ✅
+- Responsividade ✅
 
-#### Bônus
+## :arrow_right: Como Usar
 
-- Typescript com clean code
-- Adição de processo no gulp para otimizar imagens
+    # Clone o repositório.
+    $ git clone https://github.com/Wesley-Medeiros/desenvolvedor-cadastra-teste-tecnico
+    
+    # Entrar dentro da pasta clonada.
+    $ cd desenvolvedor-cadastra-teste-tecnico
+    
+    # Instalando depedências.
+    $ npm install
+    
+    # Rodando
+    $ npm run start
 
-##### Dúvidas: [vinicius.delfino@cadastra.com](mailto:vinicius.delfino@cadastra.com?subject=Dúvida%20Vaga%20DEV%20-%20Cadastra)
+##   📝AUTOR
+[@Wesley-Medeiros](https://github.com/Wesley-Medeiros/)
